@@ -8,7 +8,6 @@ export async function POST(request: NextRequest) {
   const emailAddress = data.email_addresses[0].email_address;
   const firstName = data.first_name;
   const lastName = data.last_name;
-  const imageUrl = data.image_url;
   const id = data.id;
 
   await db.user.create({
@@ -16,7 +15,6 @@ export async function POST(request: NextRequest) {
       emailAddress,
       firstName,
       lastName,
-      imageUrl,
       id,
     },
   });
